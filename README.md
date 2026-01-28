@@ -45,4 +45,4 @@ Any deployment should include monitoring, drift checks, and periodic review.
 
 License
 
-MIT (recommended) — or replace with your preferred license.
+MIT (recommended) 
