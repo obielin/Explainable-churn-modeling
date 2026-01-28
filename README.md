@@ -1,20 +1,48 @@
-# Customer-churn-Prediction
+# Customer Churn Prediction — Explainable & Responsible ML Extension
 
-###  Overview
-This project focuses on predicting customer churn for a bank based on various features. Churn prediction is vital as it can help the company take proactive actions to retain valuable customers and improve customer satisfaction.
+This repository extends an existing customer churn modelling notebook with an **explainability and responsible ML layer** suitable for real-world decision support (risk/retention). The goal is not only high predictive performance, but also **transparent, auditable rationale** for model outputs.
 
-###  Features
-The key features used for churn prediction include:
-Customer demographics (age, gender, etc.)
-Account information (tenure, account type, etc.)
+## What this repo demonstrates
+- End-to-end churn modelling with **gradient-boosted decision trees**
+- Robust evaluation using **ROC-AUC**
+- **Class imbalance handling** (SMOTE) with discussion of trade-offs
+- **SHAP-based explainability**
+  - Global drivers of churn (feature importance + distribution)
+  - Local explanations for individual predictions
 
-###  Several machine learning models were trained and evaluated, including:
-Gradient Boosting Machines (LightGBM, XGBoost, CatBoost)
-Performance
-The models were evaluated based on their accuracy, precision, recall, F1-score, and AUC-ROC score. The results are documented in the respective Jupyter notebooks.
+## Why explainability matters here
+Churn predictions are often used to trigger interventions (e.g., retention offers, prioritised outreach). In such settings, we need:
+- **accountability** (why did the model flag this customer?)
+- **stakeholder trust** (clear drivers, not black-box outputs)
+- **risk controls** (bias, proxies, spurious correlations)
 
-###  Installation
-To set up the project environment:
-Clone the repository.
-Install the dependencies using pip install -r requirements.txt.
-Run the Jupyter notebooks in the notebooks/ directory.
+## Project structure
+- `notebooks/Customer churn prediction.ipynb` — main analysis + explainability
+- `requirements.txt` — pinned environment snapshot for reproducibility
+
+## How to run locally
+```bash
+conda create -n churn-xai python=3.11 -y
+conda activate churn-xai
+pip install -r requirements.txt
+jupyter notebook
+
+Results (summary)
+
+Champion model: (fill from notebook output)
+
+Metric: ROC-AUC on held-out test set
+
+Explainability: SHAP summary plots included in the notebook
+
+Notes on limitations & responsible use
+
+Oversampling (SMOTE) can improve discrimination but may affect probability calibration.
+
+SHAP explanations are model-conditional and depend on the feature representation.
+
+Any deployment should include monitoring, drift checks, and periodic review.
+
+License
+
+MIT (recommended) — or replace with your preferred license.
