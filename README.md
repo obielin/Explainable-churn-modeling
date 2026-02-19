@@ -2,8 +2,7 @@
 
 This project extends a customer churn modelling workflow with an integrated **explainability and responsible ML layer**.
 
-The objective is not only strong predictive performance, but also **transparent, auditable decision support** suitable for real-world retention use cases.
-
+The objective is strong predictive performance, and **transparent, auditable decision support** suitable for real-world retention use cases.
 
 
 ## What This Project Covers
@@ -15,7 +14,6 @@ The objective is not only strong predictive performance, but also **transparent,
   - Global drivers of churn
   - Local explanations for individual predictions
 - Explicit documentation of responsible ML considerations
-
 
 
 ## Modelling Overview
@@ -60,7 +58,6 @@ This shifts the model from a black-box predictor to a transparent decision-suppo
   - Threshold optimisation
   - Drift monitoring
   - Fairness evaluation
-
 
 
 ## Run Locally
